@@ -68,8 +68,9 @@ app.get('/', function (request, response) {
     response.send('Simple web server of files from ' + __dirname);
 });
 
-
-//Handle login http post request
+/*
+* URL /admin/login - Handle login http post request
+*/
 app.post('/admin/login', function (request, response) {
     let query = User.findOne({login_name: request.body.login_name});
     query.select("_id first_name last_name login_name password password_digest salt").exec(function (err, user) {
@@ -105,8 +106,9 @@ app.post('/admin/login', function (request, response) {
     });
 });
 
-
-//Handle Logout http post request
+/*
+* URL /admin/logout - Handle Logout http post request
+*/
 app.post('/admin/logout', function (request, response) {
     if (request.session.user_id === undefined) {
         response.status(500).send("error")
@@ -132,6 +134,9 @@ app.post('/admin/logout', function (request, response) {
     });
 });
 
+/*
+* URL /commentsOfPhoto/:photo_id - Get comments of the photo
+*/
 app.post('/commentsOfPhoto/:photo_id', function (request, response) {
     let userID = request.session.user_id;
     if (userID === undefined) {
@@ -142,7 +147,6 @@ app.post('/commentsOfPhoto/:photo_id', function (request, response) {
         response.status(400).send("Empty Comment");
         return;
     }
-    
     let photo_id = request.params.photo_id;
     Photo.findOne({_id: photo_id}, function (err, photo) {
         let newComment = {}
@@ -150,7 +154,7 @@ app.post('/commentsOfPhoto/:photo_id', function (request, response) {
         newComment.comment = request.body.comment;
         newComment.user_id = request.session.user_id;
         photo.comments = photo.comments.concat(newComment);
-        photo.save(); // write updated photo object to the database
+        photo.save(); //Write updated photo object to the database
         //New Activity Comment
         let newActivity = new Feed;
         newActivity.photo_needed = true;
@@ -164,8 +168,10 @@ app.post('/commentsOfPhoto/:photo_id', function (request, response) {
     });
 });
 
+/*
+* URL /user - register a new user
+*/
 app.post('/user', function (request, response) {
-    
     //Validation checks The post request handler must make sure that the new login_name is specified
     // and doesn't already exist. The first_name, last_name, and password must be non-empty
     // strings as well. If the information is valid, then a new user is created in the database.
@@ -220,6 +226,9 @@ app.post('/user', function (request, response) {
     }
 });
 
+/*
+* URL /photos/new - Handle a http request to add a new photo
+*/
 app.post('/photos/new', function (request, response) {
     if (request.session.user_id === undefined) {
         response.status(500).send("error")
@@ -281,7 +290,9 @@ app.post('/photos/new', function (request, response) {
     });
 });
 
-
+/*
+* URL /activities/list - Get list of activities for activities feed in order 
+*/
 app.get('/activities/list', function (request, response) {
     if (request.session.user_id === undefined) {
         response.status(500).send("error");
@@ -327,6 +338,9 @@ app.get('/activities/list', function (request, response) {
     });
 });
 
+/*
+* URL /checkrefresh - Handle check refresh by checking for current session
+*/
 app.get('/checkrefresh', function (request, response) {
     if (request.session.user_id === undefined) {
         response.status(401).send("Not logged in");
@@ -536,9 +550,11 @@ app.get('/deleteuser/:id', function(request, response) {
         });
 
     });
-    //
 });
 
+/*
+ * URL /deletecomment/- delete an individual comment in a photo
+ */
 app.post('/deletecomment/', function(request, response) {
     if (request.session.user_id === undefined) {
         response.status(401).send("Not logged in");
@@ -579,7 +595,9 @@ app.post('/deletecomment/', function(request, response) {
 
 });
 
-
+/*
+ * URL /deletephoto/:id - delete a photo with 'id'
+ */
 app.post('/deletephoto/:id', function(request, response) {
     if (request.session.user_id === undefined) {
         response.status(401).send("Not logged in");
@@ -610,6 +628,9 @@ app.post('/deletephoto/:id', function(request, response) {
     });
 });
 
+/*
+ * URL /changelike/:id - change the like with 'id'
+ */
 app.post('/changelike/:id', function(request, response){
     if (request.session.user_id === undefined) {
         response.status(401).send("Not logged in");
