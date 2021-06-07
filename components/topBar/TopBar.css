@@ -1,0 +1,21 @@
+.cs142-topbar-appBar {
+  height: 60;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  flex-direction: row;
+}
+
+
+.cs142-topbar-info {
+  text-align: right;
+}
+
+.cs142-topBar-addPhoto {
+  text-decoration: none;
+  color: white;
+}
+.cs142-topBar-addPhoto:visited {
+  text-decoration: none;
+  color: white;
+}

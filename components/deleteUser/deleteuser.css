@@ -1,0 +1,9 @@
+.cs142-delete-paper {
+    padding: 8px;
+    margin: 8px;
+    display: flex;  
+    flex-direction: row;
+    min-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}

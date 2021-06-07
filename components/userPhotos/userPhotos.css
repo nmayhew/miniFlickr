@@ -1,0 +1,71 @@
+.cs142-userPhotos-caption{
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
+.cs142-userPhotos-comments{
+    padding-left: 30px;
+}
+
+.cs142-userPhotos-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cs142-userPhotos-like {
+    padding-left: 30px;
+    padding-right: 5px;
+    align-items: center;
+}
+
+.cs142-userPhotos-like:hover {
+    cursor: pointer;
+}
+.cs142-userPhotos-delete {
+    padding-left: 2px;
+}
+
+.cs142-userPhotos-delete:hover {
+    cursor: pointer;
+    align-items: center;
+}
+
+.cs142-userPhotos-innercontain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cs142-userPhotos-likecontain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width:100%
+}
+
+
+
+.cs142-userPhotos-div{  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(10%, 1fr));
+    grid-gap: 20px;
+}
+
+.cs142-userPhotos-img {
+    max-width: 100%;
+    max-height: 70%;
+}
+.cs142-userPhotos-commentsAddOuter {
+    padding-left: 30px;
+    height: 50px;
+}
+
+.cs142-userPhotos-commentsAdd {
+    padding-left: 8px;  
+    height: 30px; 
+}

@@ -1,0 +1,29 @@
+.cs142-activities-paper{
+    padding: 8px;
+    margin: 8px;
+    display: flex;  
+    flex-direction: row;
+    min-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cs142-activities-div {
+    display: flex; 
+    flex-direction: column;
+    text-align-last: right;
+}
+
+.cs142-activities-img {
+    max-height: 100px;
+    height: 100%;
+    width: auto;
+    padding-left: 10px;
+}
+
+.cs142-activities-refresh:hover {
+    cursor: pointer;
+}
+.cs142-activities-refresh:active {
+    color: darkgray;
+}

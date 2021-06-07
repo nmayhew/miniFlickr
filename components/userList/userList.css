@@ -1,0 +1,19 @@
+.cs142-userList-ListItem {
+    text-decoration: none;
+    color: #24a0ed ;
+    transition: all 0.4s linear;
+}
+
+.cs142-userList-ListItem:visited {
+    text-decoration: none;
+    color: #24a0ed;
+    
+}
+
+.cs142-userList-ListItem:hover {
+    background-color: lightgray;
+}
+ 
+.cs142-userList-title {
+    padding-left: 5px;
+}

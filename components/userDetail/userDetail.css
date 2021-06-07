@@ -1,0 +1,76 @@
+.cs142-userDetails-header {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+  
+.cs142-userDetails-center {
+    padding-right: 10px;
+    display: flex;
+    width: fit-content; /* A fixed width as the default */
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+.cs142-userDetails-title { 
+    flex-grow: 1; /* Set the left element to grow and stretch */
+    align-items: center;
+}
+
+.cs142-userDetails-logoS {
+    margin-left:5px;
+    align-items: center;
+}
+
+.cs142-userDetails-logo {   
+    align-items: center;
+    width: fit-content;
+}
+
+.cs142-userDetails-body {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.cs142-userDetails-divButton {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cs142-userDetails-button {
+    text-align: center;
+    background-color: lightgray; 
+    color: black; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 200px;
+}
+
+.cs142-userDetails-button:hover {
+    background-color: #008CBA;
+}
+
+.cs142-userDetails-buttonText {
+    text-decoration: none;
+    color: black;
+}
+
+.cs142-userDetails-button:hover {
+    color: white;
+    text-decoration: none;
+}
+.cs142-userDetails-button:visited:hover {
+    color: white;
+    text-decoration: none;
+}
+.cs142-userDetails-button:visited {
+    text-decoration: none;
+    color: black;
+    
+}
